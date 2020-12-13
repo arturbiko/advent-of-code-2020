@@ -86,25 +86,25 @@ function passIsValid(array $pass): bool {
     return true;
 }
 
-$input = @fopen("input4.txt", "r");
+$file = @fopen("data/day4.txt", "r");
 
 $passport = [];
 
 $valid = 0;
 
-while (!feof($input)) {
-    $buffer = fgets($input);
+while (!feof($file)) {
+    $buffer = fgets($file);
 
     $data = explode(' ', $buffer);
 
-    if (isNewLine($data) || feof($input)) {
+    if (isNewLine($data) || feof($file)) {
         if(passIsValid($passport)) {
             ++$valid;
         }
 
         $passport = [];
 
-        if (feof($input)) {
+        if (feof($file)) {
             break;
         }
     }

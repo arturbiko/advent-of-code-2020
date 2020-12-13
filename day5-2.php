@@ -21,7 +21,7 @@ function divide(string $instruction, int $lower, int $upper): array {
     ];
 }
 
-$id = -1;
+$ids = [];
 
 $input = @fopen("data/day5.txt", "r");
 
@@ -77,13 +77,22 @@ while (!feof($input)) {
                     $temp += $upperColumn;
                 }
 
-                if ($temp > $id) {
-                    $id = $temp;
-                }
+                $ids[] = $temp;
 
                 break;
         }
     }
 }
 
-echo $id;
+sort($ids);
+
+for ($i = 0; $i < count($ids) - 1; ++$i) {
+    $current = $ids[$i];
+    $next = $ids[$i + 1];
+
+    if ($next - 1 > $current) {
+        echo ($next - 1);
+        break;
+    }
+}
+
