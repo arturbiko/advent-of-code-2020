@@ -23,7 +23,7 @@ function divide(string $instruction, int $lower, int $upper): array {
 
 $ids = [];
 
-$input = @fopen("data/day5.txt", "r");
+$input = @fopen("day5.txt", "r");
 
 while (!feof($input)) {
     $buffer = fgets($input);

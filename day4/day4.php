@@ -29,7 +29,7 @@ function passIsValid(array $pass): bool {
     return true;
 }
 
-$file = @fopen("data/day4.txt", "r");
+$file = @fopen("day4.txt", "r");
 
 $passport = [];
 $passports = [];

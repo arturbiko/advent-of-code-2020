@@ -1,6 +1,6 @@
 <?php
 
-$file = @fopen("data/day3.txt", "r");
+$file = @fopen("day3.txt", "r");
 
 $posCounter = 0;
 
