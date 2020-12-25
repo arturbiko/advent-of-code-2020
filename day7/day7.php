@@ -12,10 +12,10 @@ class Bag {
         $this->handle = $handle;
     }
 
-    public function add(Bag $bag) {
+    public function add(Bag $bag): void
+    {
         $this->bags[$bag->handle] = $bag;
     }
-
 
     public function find(string $handle): ?Bag
     {
