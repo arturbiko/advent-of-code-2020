@@ -9,11 +9,11 @@ function sanitize(string $line): string
 
 function isValid(int $min, int $max, string $chr, string $input): bool
 {
-    if ($chr === $input[$min - 1] && $chr === $input[$max - 1]) {
-        return false;
-    }
+    $chrCount = count(array_filter(str_split($input), function (string $c) use ($chr) {
+        return $chr === $c;
+    }));
 
-    return $chr === $input[$min - 1] || $chr === $input[$max - 1];
+    return $min <= $chrCount && $max >= $chrCount;
 }
 
 $correct = 0;
